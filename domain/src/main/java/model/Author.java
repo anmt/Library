@@ -20,6 +20,16 @@ public class Author {
     @OneToMany(mappedBy = "author")
     private List<Book> books;
 
+    public Author(){
+
+    }
+
+    public Author(String firstName, String lastName, String birthPlace, List<Book> books) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthPlace = birthPlace;
+        this.books = books;
+    }
 
     public Long getIdAuthor() {
         return idAuthor;

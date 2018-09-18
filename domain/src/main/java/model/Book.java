@@ -29,6 +29,21 @@ public class Book implements Serializable{
     @OneToMany(mappedBy = "book")
     private List<Borrow> borrows;
 
+    public Book(){
+
+    }
+
+    public Book(Boolean borrow, String category, String isbn, Integer pages, LocalDate releaseDate, String summary, String title, Author author, List<Borrow> borrows) {
+        this.borrow = borrow;
+        this.category = category;
+        this.isbn = isbn;
+        this.pages = pages;
+        this.releaseDate = releaseDate;
+        this.summary = summary;
+        this.title = title;
+        this.author = author;
+        this.borrows = borrows;
+    }
 
     public Long getIdBook() {
         return idBook;

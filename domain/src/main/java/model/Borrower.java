@@ -21,6 +21,16 @@ public class Borrower {
     @OneToMany(mappedBy = "borrower")
     private List<Borrow> borrows;
 
+    public Borrower(){
+
+    }
+
+    public Borrower(String firstName, String lastName, BorrowerDetails borrowerDetails, List<Borrow> borrows) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.borrowerDetails = borrowerDetails;
+        this.borrows = borrows;
+    }
 
     public Long getIdBorrower() {
         return idBorrower;

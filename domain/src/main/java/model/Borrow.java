@@ -20,6 +20,15 @@ public class Borrow {
     @Column(name = "rental_date", nullable = false)
     private LocalDate rentalDate;
 
+    public Borrow(){
+
+    }
+
+    public Borrow(Book book, Borrower borrower, LocalDate rentalDate) {
+        this.book = book;
+        this.borrower = borrower;
+        this.rentalDate = rentalDate;
+    }
 
     public Long getIdBorrow() {
         return idBorrow;

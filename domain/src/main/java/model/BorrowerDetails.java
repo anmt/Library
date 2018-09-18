@@ -16,6 +16,16 @@ public class BorrowerDetails {
     @OneToOne(mappedBy = "borrowerDetails")
     private Borrower borrower;
 
+    public BorrowerDetails(){
+
+    }
+
+    public BorrowerDetails(String address, String email, String phone, Borrower borrower) {
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.borrower = borrower;
+    }
 
     public Long getIdBorrowerDetails() {
         return idBorrowerDetails;
