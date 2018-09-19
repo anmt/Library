@@ -18,6 +18,18 @@ public class HomeServlet extends HttpServlet {
     IBookService bookService = new BookService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        String bookId = request.getParameter("choice");
+        switch (action){
+            case "Add": response.sendRedirect("/AddBookServlet");
+            break;
+            case "Edit": response.sendRedirect("/EditBookServlet?bookId="+bookId);
+            break;
+            case "Show": response.sendRedirect("/ShowBookServlet?bookId="+bookId);
+            break;
+            case "Delete": response.sendRedirect("/DeleteBookServlet?bookId="+bookId);
+            break;
+        }
 
     }
 

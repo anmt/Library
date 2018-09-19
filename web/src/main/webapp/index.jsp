@@ -1,7 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
+<head>
+    <title>Home</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
 <body>
 
     <div class="container">
@@ -36,6 +41,10 @@
             </c:forEach>
             </tbody>
         </table>
+            <input class="btn btn-outline-success" type="submit" name="action" value="Add">
+            <input class="btn btn-outline-primary" type="submit" name="action" value="Edit">
+            <input class="btn btn-outline-secondary" type="submit" name="action" value="Show">
+            <input class="btn btn-outline-danger" type="submit" name="action" value="Delete">
         </form>
 
     </div>
