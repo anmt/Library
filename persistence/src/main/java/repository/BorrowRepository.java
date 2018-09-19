@@ -54,9 +54,5 @@ public class BorrowRepository implements IBorrowRepository {
         return entityManager.find(Borrow.class, id);
     }
 
-    @Override
-    public void cleanUp() {
-        entityManager.close();
-        managerFactory.close();
-    }
+
 }

@@ -12,6 +12,6 @@ public interface IBorrowerRepository {
 
     Borrower findById(Long id);
 
-    void cleanUp();
+
 
 }

@@ -12,6 +12,6 @@ public interface IAuthorRepository {
 
     Author findById(Long id);
 
-    void cleanUp();
+
 
 }

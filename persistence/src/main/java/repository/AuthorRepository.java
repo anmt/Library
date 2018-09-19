@@ -69,9 +69,5 @@ public class AuthorRepository implements IAuthorRepository {
         return entityManager.find(Author.class, id);
     }
 
-    @Override
-    public void cleanUp() {
-        entityManager.close();
-        managerFactory.close();
-    }
+
 }

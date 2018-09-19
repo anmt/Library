@@ -2,6 +2,8 @@ package repository;
 
 import model.Book;
 
+import java.util.List;
+
 public interface IBookRepository {
 
     void add(Book book);
@@ -12,6 +14,6 @@ public interface IBookRepository {
 
     Book findById(Long id);
 
-    void cleanUp();
+    List<Book> findAll();
 
 }

@@ -68,9 +68,5 @@ public class BorrowerDetailsRepository implements IBorrowerDetailsRepository {
         return entityManager.find(BorrowerDetails.class, id);
     }
 
-    @Override
-    public void cleanUp() {
-        entityManager.close();
-        managerFactory.close();
-    }
+
 }

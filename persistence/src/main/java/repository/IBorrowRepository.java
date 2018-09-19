@@ -10,6 +10,6 @@ public interface IBorrowRepository {
 
     Borrow findById(Long id);
 
-    void cleanUp();
+
 
 }

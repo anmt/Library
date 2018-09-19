@@ -2,10 +2,9 @@ package repository;
 
 import model.Book;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookRepository implements IBookRepository {
 
@@ -69,8 +68,22 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void cleanUp() {
-        entityManager.close();
-        managerFactory.close();
+    public List<Book> findAll() {
+        List<Book> books = new ArrayList<>();
+        EntityTransaction transaction = null;
+        try {
+            transaction = entityManager.getTransaction();
+            transaction.begin();
+            Query query = entityManager.createQuery("select b from Book b");
+            books = query.getResultList();
+            transaction.commit();
+        } catch (Exception e) {
+            if(transaction != null) {
+                transaction.rollback();
+            }
+        }
+        return books;
     }
+
+
 }
